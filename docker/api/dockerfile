@@ -1,0 +1,19 @@
+FROM golang:1.11.5-alpine3.9
+
+ENV GOPATH $GOPATH:/go/src 
+
+RUN apk update && \
+    apk upgrade && \
+    apk add build-base && \ 
+    apk add git
+
+RUN go get -u github.com/revel/revel && \
+    go get -u github.com/revel/cmd/revel && \
+    go get -u github.com/jinzhu/gorm && \
+    go get -u github.com/dgrijalva/jwt-go && \
+    go get -u github.com/go-sql-driver/mysql && \
+    go get -u github.com/go-playground/validator && \
+    go get -u github.com/pressly/goose/cmd/goose && \
+    go get -u golang.org/x/tools/cmd/goimports && \
+    go get -u github.com/xo/xo && \
+    go get -u github.com/go-redis/redis

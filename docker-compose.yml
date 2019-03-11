@@ -1,0 +1,43 @@
+version: '3'
+services:
+  api:
+    container_name: api
+    build: ./docker/api
+    tty: true
+    stdin_open: true
+    env_file:
+      - ./env/.env
+      - ./env/mysql.env
+    command: revel run api
+    ports:
+      - 80:9000
+      - 443:9000
+    volumes:
+      - ./api:/go/src/api
+      - ./xo:/go/src/xo
+    links:
+      - mysql
+      - redis
+
+  mysql:
+    container_name: mysql
+    build: ./docker/mysql
+    env_file:
+      - ./env/mysql.env
+    ports:
+      - "13306:3306"
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+      - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./docker/mysql/sql:/docker-entrypoint-initdb.d
+ 
+  redis:
+      container_name: redis
+      image: redis:5.0
+      ports:
+        - "6379:6379"
+      command: redis-server --appendonly yes
+      environment: 
+        REDIS_PASSWORD: "password"
+      volumes:
+        - ./data/redis:/data
