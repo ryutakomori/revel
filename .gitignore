@@ -1,0 +1,8 @@
+api/log/api-warn.json
+api/log/api-error.json
+api/log/api-critical.json
+api/log/api-requests.json
+docker/database/mysql
+xo
+api/log/*.log
+.DS_Store

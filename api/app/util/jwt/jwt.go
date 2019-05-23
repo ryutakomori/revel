@@ -25,8 +25,8 @@ var (
 )
 
 func Initialize() {
-	rawSecretKey, _ := ioutil.ReadFile("keys/secret.key")
-	rawPublicKey, _ := ioutil.ReadFile("keys/public.key")
+	rawSecretKey, _ := ioutil.ReadFile("keys/revel.pri")
+	rawPublicKey, _ := ioutil.ReadFile("keys/revel.pub.pkcs8")
 
 	err := ParseKeys(rawSecretKey, rawPublicKey)
 	if err != nil {

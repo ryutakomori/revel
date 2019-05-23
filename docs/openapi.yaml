@@ -1,12 +1,10 @@
 openapi: 3.0.1
 info:
-  title: test Search API仕様書
+  title: Swagger API仕様書
   description: |
-    test Search APIの仕様をOpenAPI 3にしたがって記述したドキュメント。
+    APIの仕様をOpenAPI 3にしたがって記述したドキュメント。
   version: v1.0
 servers:
-  - url: 'https://api.dev.test-search.jp/v1'
-    description: 開発環境へアクセスするためのURL
   - url: 'http://localhost:3000/v1'
     description: ローカル開発環境へアクセスするためのURL
 tags:

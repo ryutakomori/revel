@@ -12,7 +12,7 @@ func dbConnect() *gorm.DB {
 	dbPass := "test"
 	dbHost := "127.0.0.1"
 	dbPort := "3306"
-	dbName := "test"
+	dbName := "orange"
 
 	dbPath := dbUser + ":" + dbPass + "@tcp(" + dbHost + ":" + dbPort + ")/" + dbName + "?charset=utf8&parseTime=True&loc=Local"
 	db, err := gorm.Open("mysql", dbPath)

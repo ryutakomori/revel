@@ -2,8 +2,9 @@ version: '3'
 services:
   api:    
     environment:
-      MYSQL_DATABASE: test
-      MYSQL_USER: root
+      MYSQL_DATABASE: sample
+      MYSQL_USER: test
       MYSQL_PASSWORD: test
+      MYSQL_HOST: mysql
 
     command: revel run api prod

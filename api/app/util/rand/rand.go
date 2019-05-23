@@ -18,7 +18,3 @@ func TokenGenerate(n int) string {
 	}
 	return string(b)
 }
-
-// func main() {
-//     fmt.Println(randSeq(50))
-// }
